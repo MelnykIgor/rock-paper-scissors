@@ -4,6 +4,9 @@ let score = JSON.parse(localStorage.getItem("score")) || {
   ties: 0,
 };
 updateScoreElement();
+const WIN = "You Win.";
+const LOSE = "You Lose.";
+const TIE = "Tie.";
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
@@ -12,27 +15,27 @@ function playGame(playerMove) {
 
   if (playerMove === "Scissors") {
     if (computerMove === "Rock") {
-      result = "You Lose.";
+      result = LOSE;
     } else if (computerMove === "Paper") {
-      result = "You Win.";
+      result = WIN;
     } else if (computerMove === "Scissors") {
-      result = "Tie.";
+      result = TIE;
     }
   } else if (playerMove === "Paper") {
     if (computerMove === "Rock") {
-      result = "You Win.";
+      result = WIN;
     } else if (computerMove === "Paper") {
-      result = "Tie.";
+      result = TIE;
     } else if (computerMove === "Scissors") {
-      result = "You Lose.";
+      result = LOSE;
     }
   } else if (playerMove === "Rock") {
     if (computerMove === "Rock") {
-      result = "Tie.";
+      result = TIE;
     } else if (computerMove === "Paper") {
-      result = "You Lose.";
+      result = LOSE;
     } else if (computerMove === "Scissors") {
-      result = "You Win.";
+      result = WIN;
     }
   }
 
